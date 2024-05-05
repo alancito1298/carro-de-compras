@@ -1,0 +1,114 @@
+@charset "ISO-8859-1";
+
+body{
+background:linear-gradient(to right,#141E30,#243B55) ;
+justify-content: center;
+}
+
+footer{
+	color: white;
+	padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   
+    }
+    
+.formulario-inicio{
+	color: white;
+	text-align: center;
+	position:absolute;
+	top: 20%;
+	left: 69%;
+	}
+	
+	#ilustracion{
+	position: absolute;
+	margin-left: 100px;
+	top: 100px;
+	width: 1000px;
+	}
+
+#no-tienes-cuenta{
+	color: white;
+	position: relative;
+
+}
+
+#especial{
+	width:410px;
+	height:40px;
+}
+
+.h1{
+	font-size:50px;
+	
+}
+header{
+	height: 50px;
+}
+
+.logo{
+	margin-top: 10px;
+	margin-left:50px;
+}
+
+#Campodetexto{
+	height: 40px;
+	color: white;
+	width: 420px;
+	border:2px solid white;
+	padding:15px;
+	background-color:  #243B55;
+	font-family: Helvetica;
+
+}
+#Campodetexto::placeholder{
+	color:  white;
+}
+
+#Campodetexto:focus,#especial:focus {
+  border-color: white; /* Cambiar el color del borde cuando el campo está enfocado */
+  outline: none; /* Quitar el contorno predeterminado que algunos navegadores añaden al enfoque */
+}
+#tipo{
+	height: 40px; 
+	width: 420px;
+	border:2px solid white;
+	font-family:Helvetica;
+	background-color:  #243B55;
+	color: white;
+	background-image: url(/images/flecha-select-inicio-sesion.png);
+	background-size: 20px;
+	
+	
+}
+.custom-select{
+	border-image-width: 30px;
+}
+
+.selecion-tipo-cuenta{
+	position: relative;
+	bottom: 25px;
+	
+}
+
+
+
+label{
+	color: white;
+	right:155px;
+	position: relative;
+	font-family:Helvetica;
+}
+
+
+#msj-registro{
+	width: 670px;
+	left: 63%;
+	color:#0aa02f;
+	text-align: center;
+}
+

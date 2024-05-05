@@ -1,0 +1,97 @@
+<header th:fragment="header"> 
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" th:href="@{/carritodecompras/principal}"><img class="logo"  th:src="@{/images/logo-home.png}"> Carrito de compras </a>
+
+          
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li class="nav-item dropdown"> <a  id="categoria" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a> 
+            <ul class="dropdown-menu"> 
+             <li><a class="dropdown-item h6"  th:each="categoria : ${categorias}"  th:href="@{/carritodecompras/categoria/{id} (id= ${categoria.id})}" th:text="${categoria.nombre}"></a></li> 
+            </ul> 
+          </li> 
+        </ul>
+      
+        
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> <img class="logo1"  th:src="@{/images/logo-home.png}" > Carrito de compras</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body" >
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                <li secAuthorize="isAuthenticated()">
+                  <p class="h5">¡Hola, <span  sec:authentication="name" ></span>!</p>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" th:href="@{/carritodecompras/principal}">Home</a>
+                </li>
+
+                <li class="nav-item" sec:Authorize="hasAnyAuthority('Cliente')">
+                  <a class="nav-link" th:href="@{/carritodecompras/cliente/elcarrito}">Ir al carrito
+                  	<img class="ir-al-carrito" th:src="@{/images/carrito-de-compras.png}">
+                  </a>
+                </li>
+
+                <li class="nav-item" sec:Authorize="hasAnyAuthority('Vendedor')">
+                  <a class="nav-link" th:href="@{/carritodecompras/vendedor/misproductos}">Mis productos</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mas acciones
+                  </a>
+                  <ul  class="dropdown-menu dropdown-menu-dark">
+                    <li sec:Authorize="hasAnyAuthority('Vendedor')"><a class="dropdown-item" th:href="@{/carritodecompras/vendedor/producto/nuevo}">Publicar nuevo producto</a></li>
+                    <li><a class="dropdown-item" href="#">Información de la cuenta</a></li>
+                    <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+                    <li><a class="dropdown-item" href="#">Clientes</a></li>
+                    <li><a class="dropdown-item" href="#">Acerca de</a></li>
+                 
+                  </ul>
+                </li>
+                <li class="nav-item" sec:Authorize="isAuthenticated">
+                  <a class="nav-link active" aria-current="page" th:href="@{/carritodecompras/logout}">cerrar sesión</a>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+ <style>
+.navbar{
+	height:90px;
+	background:linear-gradient(to right,#141E30,#243B55) ;
+}
+.nav-link active{
+  color: white;
+}
+.offcanvas-header{
+    background:linear-gradient(to right,#141E30,#243B55) ;
+}
+.offcanvas-body{
+    background:linear-gradient(to right,#141E30,#243B55) ;
+}
+.logo{
+    height:40px;
+}
+.logo1{
+    height:30px;
+}
+.ir-al-carrito{
+height: 16px;
+}
+
+#categoria{
+  color: white;
+
+}
+</style>
+</header>

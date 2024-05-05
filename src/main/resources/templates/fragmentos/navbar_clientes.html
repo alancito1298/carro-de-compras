@@ -1,0 +1,35 @@
+<link rel="stylesheet"  th:href="@{/css/navbar.css}" href="../../static/css/navbar.css">
+<nav th:fragment="header" class="navbar bg-info fixed-top">
+   
+  <div class="container-fluid"> 
+      <a class="navbar-brand" href="#">Distribuidora Daniel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header bg-primary">
+          <h5 secAuthorize="isAuthenticated()" class="offcanvas-title" id="offcanvasNavbarLabel"><p class="h5">¡Hola, <span  sec:authentication="name" ></span>!</p></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" th:href="@{/carritodecompras/principal}">Inicio</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" th:href="@{/carritodecompras/cliente/elcarrito}">Ir a compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Consultas</a>
+              </li>
+              <li class="nav-item">
+                <a class=" btn btn-danger" th:href="@{/carritodecompras/logout}">Cerrar sesión</a>
+              </li>
+            
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">

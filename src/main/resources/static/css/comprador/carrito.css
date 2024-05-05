@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+.card-body{
+	
+	background-color: #E3E3E3;
+}
+th{
+
+	height:60px;
+	text-align: center;
+	vertical-align: middle;
+	
+	
+}
+
+.alert alert-success alert-dismissible fade show{
+ 
+ display: inline;	
+}
+.container{
+	 display: flex; 
+	 justify-content: center;
+}
+#msj{
+	position: relative;
+	top: 3%;
+	
+}
+
+#card-principal{
+	width: 1000px; 
+}
+#operaciones{
+	text-align: center;
+}
+
+#msj-actualizado{
+	
+	color: rgb(15, 126, 57);
+}
